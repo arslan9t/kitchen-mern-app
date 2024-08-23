@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+
 import express from "express";
 import { connectDB } from "./config/db.js";
 import adminRouter from "./routes/adminRoute.js";
@@ -8,7 +8,7 @@ import orderRouter from "./routes/orderRoute.js";
 import userRouter from "./routes/userRoute.js";
 // CONFIGURATIONS
 
-dotenv.config();
+
 const app = express();
 app.use(express.json());
 app.use("/images", express.static("uploads"));
