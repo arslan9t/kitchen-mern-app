@@ -3,7 +3,7 @@ import React, { createContext, useEffect, useState } from "react";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
-	const url = "http://localhost:3000";
+	const url = "https://kitchen-mern-app.onrender.com";
 	const [token, setToken] = useState("");
 	const context = {
 		url,
