@@ -38,6 +38,17 @@ const Sidebar = () => {
 					<span>Order Items</span>
 				</p>
 			</NavLink>
+			<NavLink
+				to="settings"
+				className="focus:bg-orange-100 flex gap-2  border-black items-center border-b-2   p-[1vw]"
+			>
+				<div className="size-[3vw] h-full">
+					<img src={assets.order_icon} alt="" />
+				</div>
+				<p className="text-[1.3vw]  ">
+					<span>Settings</span>
+				</p>
+			</NavLink>
 		</div>
 	);
 };
