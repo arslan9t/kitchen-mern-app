@@ -164,10 +164,10 @@ const order = () => {
 					<hr className="bg-slate-900 h-[0.2vh]" />
 					<button
 						type="submit"
-						onClick={() => navigate("/order")}
+						onClick={() => navigate("/myorder")}
 						className="p-[1vw] mt-[1vw] bg-orange-700 rounded text-white"
 					>
-						<p className="text-[1vw]"> Proceed To Pay </p>
+						<p className="text-[1vw]"> Place Order </p>
 					</button>
 				</div>
 			</form>
