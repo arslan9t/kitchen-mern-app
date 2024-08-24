@@ -63,9 +63,8 @@ const placeOrder = async (req, res) => {
 			},
 		});
 		info.purchase_units[0].items = items;
-		const url = await createOrder(info);
-		console.log(url);
-		res.redirect(url);
+		const nwUrl = await createOrder(info);
+		await open(newUrl);
 	} catch (error) {
 		console.log(error);
 	}
