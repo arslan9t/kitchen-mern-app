@@ -1,4 +1,4 @@
-import { open } from "out-url";
+
 import orderModel from "../modals/order.js";
 import userModel from "../modals/user.js";
 import { capturePayment, createOrder } from "../services/paypal.js";
@@ -62,7 +62,7 @@ const placeOrder = async (req, res) => {
 		});
 		info.purchase_units[0].items = items;
 		const newUrl = await createOrder(info);
-		await open(newUrl);
+		window.open(newUrl);
 	} catch (error) {
 		console.log(error);
 	}
