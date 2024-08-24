@@ -1,4 +1,4 @@
-import { open } from "out-url";
+
 import orderModel from "../modals/order.js";
 import userModel from "../modals/user.js";
 import { capturePayment, createOrder } from "../services/paypal.js";
@@ -32,12 +32,10 @@ const placeOrder = async (req, res) => {
 			],
 
 			application_context: {
-				return_url:
-					process.env.BASE_URL +
-					`/api/order/complete-order/${newOrder._id}/${newOrder.userId}`,
+				return_url:	
+					`https://kitchen-backend-e1zq.onrender.com/api/order/complete-order/${newOrder._id}/${newOrder.userId}`,
 				cancel_url:
-					process.env.BASE_URL +
-					`/api/order/cancel-order/${newOrder._id}/${newOrder.userId}`,
+					`https://kitchen-backend-e1zq.onrender.com/api/order/cancel-order/${newOrder._id}/${newOrder.userId}`,
 				shipping_preference: "NO_SHIPPING",
 				user_action: "PAY_NOW",
 				brand_name: "Kitchen",
@@ -63,8 +61,8 @@ const placeOrder = async (req, res) => {
 			},
 		});
 		info.purchase_units[0].items = items;
-		const url = await createOrder(info);
-		await open(url);
+		const newUrl = await createOrder(info);
+		window.open(newUrl);
 	} catch (error) {
 		console.log(error);
 	}
