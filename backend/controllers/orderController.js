@@ -40,7 +40,7 @@ const placeOrder = async (req, res) => {
 					`/api/order/cancel-order/${newOrder._id}/${newOrder.userId}`,
 				shipping_preference: "NO_SHIPPING",
 				user_action: "PAY_NOW",
-				brand_name: "Tomato",
+				brand_name: "Kitchen",
 			},
 		};
 
@@ -75,7 +75,7 @@ const successPage = async (req, res) => {
 		await capturePayment(req.query.token);
 		await orderModel.findByIdAndUpdate(req.params.id, { payment: true });
 		await userModel.findByIdAndUpdate(req.params.userId, { cartItems: {} });
-		res.redirect("http://localhost:5173/");
+		res.redirect("https://kitchen-frontend.onrender.com/");
 	} catch (error) {
 		console.log(error);
 		res.json({ success: false, message: "Error" });
@@ -84,7 +84,7 @@ const successPage = async (req, res) => {
 
 const cancelPage = async (req, res) => {
 	await orderModel.findByIdAndDelete(req.params.id);
-	res.redirect("http://localhost:5173/order");
+	res.redirect("https://kitchen-frontend.onrender.com/order");
 };
 
 const orderPage = async (req, res) => {
