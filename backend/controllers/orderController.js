@@ -32,12 +32,10 @@ const placeOrder = async (req, res) => {
 			],
 
 			application_context: {
-				return_url:
-					process.env.BASE_URL +
-					`/api/order/complete-order/${newOrder._id}/${newOrder.userId}`,
+				return_url:	
+					`https://kitchen-backend-e1zq.onrender.com/api/order/complete-order/${newOrder._id}/${newOrder.userId}`,
 				cancel_url:
-					process.env.BASE_URL +
-					`/api/order/cancel-order/${newOrder._id}/${newOrder.userId}`,
+					`https://kitchen-backend-e1zq.onrender.com/api/order/cancel-order/${newOrder._id}/${newOrder.userId}`,
 				shipping_preference: "NO_SHIPPING",
 				user_action: "PAY_NOW",
 				brand_name: "Kitchen",
