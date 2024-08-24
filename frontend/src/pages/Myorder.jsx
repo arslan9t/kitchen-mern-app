@@ -13,7 +13,7 @@ const Myorder = () => {
 			{ headers: { token } },
 		);
 		setData(response.data.data);
-		setCartItems({});
+		
 	};
 
 	useEffect(() => {
