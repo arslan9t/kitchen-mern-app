@@ -13,13 +13,12 @@ const Myorder = () => {
 			{ headers: { token } },
 		);
 		setData(response.data.data);
-		console.log(response.data.data);
+		setCartItems({});
 	};
 
 	useEffect(() => {
 		if (token) {
 			fetchOrder();
-			setCartItems({});
 		}
 	}, [token]);
 
