@@ -34,8 +34,8 @@ const Add = ({ url }) => {
 			setData({
 				name: "",
 				price: "",
-				category: "",
-				description: "Salad",
+				category: "Salad",
+				description: "",
 			});
 			setImage(false);
 			toast("Food Added");
