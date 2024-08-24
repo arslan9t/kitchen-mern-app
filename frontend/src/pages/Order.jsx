@@ -167,9 +167,7 @@ const order = () => {
 						onClick={() => navigate("/myorder")}
 						className="p-[1vw] mt-[1vw] bg-orange-700 rounded text-white"
 					>
-						<p className="text-[1vw]" onClick={() => setCartItems({})}>
-							Place Order
-						</p>
+						<p className="text-[1vw]">Place Order</p>
 					</button>
 				</div>
 			</form>
