@@ -4,7 +4,7 @@ import { assets } from "../assets/frontend_assets/assets.js";
 import { StoreContext } from "../context/StoreContext.jsx";
 
 const Myorder = () => {
-	const { url, token } = useContext(StoreContext);
+	const { url, token,setCartItems } = useContext(StoreContext);
 	const [data, setData] = useState([]);
 	const fetchOrder = async () => {
 		const response = await axios.post(
@@ -13,7 +13,7 @@ const Myorder = () => {
 			{ headers: { token } },
 		);
 		setData(response.data.data);
-		console.log(response.data.data);
+		setCartItems({});
 	};
 
 	useEffect(() => {
