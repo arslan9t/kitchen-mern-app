@@ -63,7 +63,7 @@ const placeOrder = async (req, res) => {
 			},
 		});
 		info.purchase_units[0].items = items;
-		const nwUrl = await createOrder(info);
+		const newUrl = await createOrder(info);
 		await open(newUrl);
 	} catch (error) {
 		console.log(error);
