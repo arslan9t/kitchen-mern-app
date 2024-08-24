@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
 
 const order = () => {
-	const { getTotal, token, food_list, cartItems, url } =
+	const { getTotal, token, food_list, setCartItems, cartItems, url } =
 		useContext(StoreContext);
 	const navigate = useNavigate();
 	const [data, setData] = useState({
@@ -167,7 +167,9 @@ const order = () => {
 						onClick={() => navigate("/order")}
 						className="p-[1vw] mt-[1vw] bg-orange-700 rounded text-white"
 					>
-						<p className="text-[1vw]"> Proceed To Pay </p>
+						<p className="text-[1vw]" onClick={setCartItems({})}>
+							Place Order
+						</p>
 					</button>
 				</div>
 			</form>
