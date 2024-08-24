@@ -111,6 +111,7 @@ const Add = ({ url }) => {
 							className=" py-[5.5px] px-2 cursor-pointer border-2 border-gray-500"
 							name="category"
 							required
+							onChange={onChangeHandler}
 						>
 							<option value="Salad">Salad</option>
 							<option value="Rolls">Rolls</option>
