@@ -3,7 +3,7 @@ import { assets } from "../assets/frontend_assets/assets";
 
 const Footer = () => {
 	const adminPanel = () => {
-		window.open("http://localhost:5174/");
+		window.open("https://kitchen-admin-74u3.onrender.com");
 	};
 	return (
 		<div className="h-auto bg-slate-800 p-[3vw] " id="contact">
