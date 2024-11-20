@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/frontend_assets/assets";
 import { StoreContext } from "../context/StoreContext.jsx";
 
@@ -6,7 +6,7 @@ const Items = ({ all }) => {
 	const { _id, price, name, image, description } = all;
 	const { cartItems, addToCart, removeFromCart, url } =
 		useContext(StoreContext);
-
+	const [cart, setCart] = useState(cartItems);
 	return (
 		<div className="p-[1vw] rounded  hover:shadow-amber-500 shadow-md relative max-w-[22vw] cursor-pointer  ">
 			<div>
@@ -24,7 +24,7 @@ const Items = ({ all }) => {
 				<p className="text-red-600 text-[1vw]">${price}</p>
 			</div>
 			<div className="absolute top-[13.2vw] right-[2vw] bg-white rounded-3xl">
-				{cartItems == null && !(cartItems[_id] > 0) ?
+				{cart == null || cart[_id] == null || cart[_id] <= 0 ?
 					<img
 						onClick={() => addToCart(_id)}
 						className="h-[2vw]"
