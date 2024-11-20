@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { assets } from "../assests/admin_assets/assets";
 
 const Add = ({ url }) => {
-	const [image, setImage] = useState(false);
+	const [image, setImage] = useState(undefined);
 
 	const [data, setData] = useState({
 		name: "",
@@ -37,7 +37,7 @@ const Add = ({ url }) => {
 				category: "Salad",
 				description: "",
 			});
-			setImage(false);
+			setImage(undefined);
 			toast("Food Added");
 		} else {
 			toast.error("Error");
