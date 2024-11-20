@@ -16,7 +16,7 @@ function App() {
 
 	return (
 		<div>
-			{token ?
+			{!token ?
 				<div>
 					<Login />
 				</div>
