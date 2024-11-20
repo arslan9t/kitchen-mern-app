@@ -25,6 +25,7 @@ const StoreContextProvider = (props) => {
 				);
 			}
 		} catch (error) {
+			alert(error.message);
 			console.log(error);
 		}
 	};
