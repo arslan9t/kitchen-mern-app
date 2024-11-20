@@ -27,11 +27,7 @@ const Cart = ({ setToggle }) => {
 								key={index}
 								className="grid grid-cols-6 gap-[1vw] m-[0.5vw] items-center "
 							>
-								<img
-									className="w-[5vw]"
-									src={url + "images/" + item.image}
-									alt=""
-								/>
+								<img className="w-[5vw]" src={item.image} alt="" />
 								<p className="text-[1vw]">{item.name}</p>
 								<p className="text-[1vw]">${item.price}</p>
 								<p className="text-[1vw]">{cartItems[item._id]}</p>
