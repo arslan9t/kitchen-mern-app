@@ -41,13 +41,11 @@ const Login = ({ setToggle }) => {
 
 	return (
 		<div className="absolute top-[25vh] w-full h-auto bg-transparent rounded-2xl grid place-content-center cursor-pointer text-[1vw] ">
-			<div className="max-w-[20vw] p-[1vw] rounded bg-white ">
+			<div className="max-w-[20vw] p-[1vw] rounded bg-white border border-red-800 shadow-2xl">
 				<div className="flex justify-between p-[1.4vw] items-center">
-					{input === "login" ? (
+					{input === "login" ?
 						<h1 className="font-bold text-[1.7vw] ">Login</h1>
-					) : (
-						<h1 className="font-bold text-[1.7vw] ">Sign Up</h1>
-					)}
+					:	<h1 className="font-bold text-[1.7vw] ">Sign Up</h1>}
 					<img
 						className="size-[1vw] cursor-pointer "
 						onClick={() => setToggle(false)}
@@ -57,10 +55,9 @@ const Login = ({ setToggle }) => {
 				</div>
 				<div className=" flex flex-col gap-[1vw] p-[1vw]">
 					<form onSubmit={login} className="flex flex-col gap-[1vw]">
-						{input === "login" ? (
+						{input === "login" ?
 							""
-						) : (
-							<input
+						:	<input
 								className="p-[0.5vw] rounded-lg border-2"
 								type="text"
 								name="username"
@@ -71,7 +68,7 @@ const Login = ({ setToggle }) => {
 								}}
 								placeholder="Username"
 							/>
-						)}
+						}
 						<input
 							className="p-[0.5vw] rounded-lg border-2"
 							type="email"
@@ -105,7 +102,7 @@ const Login = ({ setToggle }) => {
 							By continuing, I agree to the terms of use & privacy policy
 						</p>
 					</form>
-					{input === "login" ? (
+					{input === "login" ?
 						<>
 							<p>
 								Create a new account?
@@ -117,8 +114,7 @@ const Login = ({ setToggle }) => {
 								</span>
 							</p>
 						</>
-					) : (
-						<>
+					:	<>
 							<p className="text-[1vw]">
 								Already have an account?
 								<span
@@ -129,7 +125,7 @@ const Login = ({ setToggle }) => {
 								</span>
 							</p>
 						</>
-					)}
+					}
 				</div>
 			</div>
 		</div>

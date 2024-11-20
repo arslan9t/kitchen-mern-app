@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/frontend_assets/assets";
 import { StoreContext } from "../context/StoreContext";
 
-const Cart = () => {
-	const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+const Cart = ({ setToggle }) => {
+	const { cartItems, addToCart, removeFromCart, token } =
+		useContext(StoreContext);
 	const { food_list, getTotal, url } = useContext(StoreContext);
 	const navigate = useNavigate();
+
 	return (
 		<div className=" p-[3vw] flex flex-col  w-[80vw] m-auto h-[100vh] ">
 			<div>
@@ -51,7 +53,13 @@ const Cart = () => {
 			</div>
 			<div className="mt-[]">
 				<button
-					onClick={() => navigate("/order")}
+					onClick={() => {
+						if (!token) {
+							setToggle((prev) => !prev);
+						} else {
+							navigate("/order");
+						}
+					}}
 					className="p-[1vw] bg-orange-700 rounded text-white"
 				>
 					<p className="text-[1vw]"> Checkout </p>

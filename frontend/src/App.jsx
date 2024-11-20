@@ -12,25 +12,22 @@ import Order from "./pages/Order";
 
 const App = () => {
 	const [toggle, setToggle] = useState(false);
-	console.log(toggle);
 	return (
 		<div className="relative">
 			<Navbar setToggle={setToggle} />
 			<div className="">
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="cart" element={<Cart />} />
+					<Route path="cart" element={<Cart setToggle={setToggle} />} />
 					<Route path="order" element={<Order />} />
 					<Route path="/myorder" element={<Myorder />} />
 				</Routes>
 			</div>
-			{toggle ? (
+			{toggle ?
 				<>
 					<Login setToggle={setToggle} toggle={toggle} />
 				</>
-			) : (
-				<></>
-			)}
+			:	<></>}
 			<Downloads />
 			<Footer />
 		</div>

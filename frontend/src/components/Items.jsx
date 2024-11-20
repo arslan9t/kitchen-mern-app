@@ -10,7 +10,7 @@ const Items = ({ all }) => {
 	return (
 		<div className="p-[1vw] rounded  hover:shadow-amber-500 shadow-md relative max-w-[22vw] cursor-pointer  ">
 			<div>
-				<img className="rounded" src={url + "images/" + image} alt="" />
+				<img className="rounded" src={image} alt="" />
 			</div>
 			<div className="p-[1vw]">
 				<div className="flex justify-between pt-2 pb-2">
@@ -24,15 +24,14 @@ const Items = ({ all }) => {
 				<p className="text-red-600 text-[1vw]">${price}</p>
 			</div>
 			<div className="absolute top-[13.2vw] right-[2vw] bg-white rounded-3xl">
-				{!(cartItems[_id] > 0) ? (
+				{!(cartItems[_id] > 0) ?
 					<img
 						onClick={() => addToCart(_id)}
 						className="h-[2vw]"
 						src={assets.add_icon_white}
 						alt=""
 					/>
-				) : (
-					<div className="flex items-center gap-[0.3vw] p-[0.2vw] ">
+				:	<div className="flex items-center gap-[0.3vw] p-[0.2vw] ">
 						<img
 							onClick={() => removeFromCart(_id)}
 							className="h-[2vw] border-[0.3vw] border-red-500 rounded-full"
@@ -47,7 +46,7 @@ const Items = ({ all }) => {
 							alt=""
 						/>
 					</div>
-				)}
+				}
 			</div>
 		</div>
 	);
