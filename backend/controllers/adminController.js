@@ -11,7 +11,7 @@ const createToken = (id) => {
 const adminRegister = async (req, res) => {
 	try {
 		const { email, password, pin } = req.body.data;
-		if (pin !== process.env.PIN) {
+		if (pin !== process.env.Pin) {
 			return res.json({ success: false, message: "Invalid Pin" });
 		}
 		const exist = await adminModel.findOne({ email: email });
