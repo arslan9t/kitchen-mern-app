@@ -18,8 +18,8 @@ const Items = ({ all }) => {
 					<img className="h-[1vw]" src={assets.rating_starts} alt="" />
 				</div>
 
-				<p className="text-zinc-500 pb-2 text-[1vw] whitespace-nowrap text-ellipsis ">
-					{description}
+				<p className="text-zinc-500 pb-2 text-[1vw] ">
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
 				</p>
 				<p className="text-red-600 text-[1vw]">${price}</p>
 			</div>
