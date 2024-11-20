@@ -47,11 +47,7 @@ const list = ({ url }) => {
 								className="md:p-3 grid-layout-md gap-3 p-2 border-b-2 items-center "
 							>
 								<div className="">
-									<img
-										className="w-20"
-										src={`${url}/images/` + item.image}
-										alt=""
-									/>
+									<img className="w-20" src={item.image} alt="" />
 								</div>
 								<p>{item.name}</p>
 								<p>{item.description}</p>
