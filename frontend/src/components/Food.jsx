@@ -3,6 +3,7 @@ import Items from "../components/Items.jsx";
 import { StoreContext } from "../context/StoreContext.jsx";
 const Food = ({ category }) => {
 	const { food_list } = useContext(StoreContext);
+
 	return (
 		<div id="menu">
 			<h1 className="text-[3vw] font-bold mb-[1vw] p-[2vw]">

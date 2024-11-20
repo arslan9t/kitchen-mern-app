@@ -18,13 +18,13 @@ const Items = ({ all }) => {
 					<img className="h-[1vw]" src={assets.rating_starts} alt="" />
 				</div>
 
-				<p className="text-zinc-500 pb-2 text-[1vw]">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				<p className="text-zinc-500 pb-2 text-[1vw] whitespace-nowrap text-ellipsis ">
+					{description}
 				</p>
 				<p className="text-red-600 text-[1vw]">${price}</p>
 			</div>
 			<div className="absolute top-[13.2vw] right-[2vw] bg-white rounded-3xl">
-				{!(cartItems[_id] > 0) ?
+				{cartItems == null || !cartItems[_id] > 0 ?
 					<img
 						onClick={() => addToCart(_id)}
 						className="h-[2vw]"
