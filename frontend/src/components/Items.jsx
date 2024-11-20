@@ -24,7 +24,7 @@ const Items = ({ all }) => {
 				<p className="text-red-600 text-[1vw]">${price}</p>
 			</div>
 			<div className="absolute top-[13.2vw] right-[2vw] bg-white rounded-3xl">
-				{cart == null || cart[_id] == null || cart[_id] <= 0 ?
+				{!(cart[_id] > 0) ?
 					<img
 						onClick={() => addToCart(_id)}
 						className="h-[2vw]"
