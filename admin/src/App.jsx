@@ -16,12 +16,11 @@ function App() {
 
 	return (
 		<div>
-			{!token ? (
+			{token ?
 				<div>
 					<Login />
 				</div>
-			) : (
-				<div>
+			:	<div>
 					<ToastContainer />
 					<Navbar />
 					<hr />
@@ -35,7 +34,7 @@ function App() {
 						</Routes>
 					</div>
 				</div>
-			)}
+			}
 		</div>
 	);
 }
