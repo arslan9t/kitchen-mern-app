@@ -21,7 +21,7 @@ const Cart = ({ setToggle }) => {
 					<p className="text-[2vw]">Remove</p>
 				</div>
 				{food_list.map((item, index) => {
-					if (cartItems[item._id] > 0) {
+					if (cartItems[item._id] >= 0) {
 						return (
 							<div
 								key={index}
