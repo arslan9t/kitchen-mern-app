@@ -10,7 +10,7 @@ const Food = ({ category }) => {
 				Top dishes near you
 			</h1>
 			<div className="flex flex-wrap gap-[1vw] animate-fade justify-center ">
-				{food_list.map((item, index) => {
+				{food_list?.map((item, index) => {
 					if (category === "all" || category === item.category)
 						return <Items key={index} all={item} />;
 				})}
